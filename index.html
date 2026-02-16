@@ -1,0 +1,50 @@
+import random
+
+def spill_algebra_escape():
+    print("--- VELKOMMEN TIL ALGEBRA-Labyrinten ---")
+    print("Løs oppgavene for å finne veien ut. Lykke til!\n")
+    
+    # NIVÅ 1: Enkel ligning (x + a = b)
+    a = random.randint(1, 10)
+    b = random.randint(11, 20)
+    riktig_svar = b - a
+    
+    print(f"Nivå 1: Du står foran en låst dør. På døra står det: x + {a} = {b}")
+    svar = int(input("Hva er verdien av x? "))
+    
+    if svar == riktig_svar:
+        print("Riktig! Døra åpner seg.\n")
+    else:
+        print(f"Feil! Alarmen går. Det riktige svaret var {riktig_svar}. Prøv igjen ved å starte koden på nytt.")
+        return
+
+    # NIVÅ 2: Ligning med multiplikasjon (ax = b)
+    a = random.randint(2, 5)
+    riktig_svar = random.randint(2, 10)
+    b = a * riktig_svar
+    
+    print(f"Nivå 2: Du er i et mørkt rom. En stemme hvisker: {a}x = {b}")
+    svar = int(input("Hva er verdien av x? "))
+    
+    if svar == riktig_svar:
+        print("Riktig! En hemmelig luke åpner seg i gulvet.\n")
+    else:
+        print(f"Feil! Du falt i en felle. Svaret var {riktig_svar}.")
+        return
+
+    # NIVÅ 3: To-leddet ligning (ax + b = c)
+    a = 2
+    x_verdi = random.randint(2, 6)
+    b = random.randint(1, 10)
+    c = (a * x_verdi) + b
+    
+    print(f"Nivå 3: Siste dør! Løs denne: {a}x + {b} = {c}")
+    svar = int(input("Hva er verdien av x? "))
+    
+    if svar == x_verdi:
+        print(f"FANTASTISK! Du løste koden og er fri!")
+    else:
+        print(f"Beklager, det var feil. Svaret var {x_verdi}. Du er innelåst for alltid!")
+
+# Starter spillet
+spill_algebra_escape()
